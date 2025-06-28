@@ -1,60 +1,64 @@
 {% extends 'base.html' %}
 {% block title %}Projects | Shubham Penkar{% endblock %}
 {% block content %}
-<h1 style="text-align: center; font-size: 2.5rem; color: #0ef;">🚀 Projects I'm Proud Of</h1>
-<p style="text-align: center; color: #a1a1aa; max-width: 720px; margin: 0 auto 2rem;">
-  These projects reflect my skills in fullstack development, creative problem-solving, and clean UI/UX design.
+<h1 style="text-align: center; font-size: 2.8rem; color: #6f42c1;">📂 Featured Projects</h1>
+<p style="text-align: center; color: #d1d5db; max-width: 800px; margin: 0 auto 3.5rem; font-size: 1.1rem;">
+  A collection of my most impactful work — built with code, passion, and caffeine ☕.
 </p>
 
-<div style="display: flex; flex-direction: column; gap: 3rem; max-width: 1000px; margin: 0 auto;">
-
-  <!-- Portfolio Website -->
-  <div style="display: flex; flex-wrap: wrap-reverse; background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);">
-    <div style="padding: 2rem; flex: 1;">
-      <h2 style="color: #0ef;">Personal Portfolio (Django + Inline CSS)</h2>
-      <p style="color: #d1d5db; margin: 1rem 0;">
-        A handcrafted personal site built with Django. It features multi-page routing, database-driven contact forms, and zero reliance on external static files. Clean, stylish, and dark-themed with fully inline CSS.
-      </p>
-    </div>
-    <img src="https://via.placeholder.com/300x200?text=Portfolio+Site" alt="Portfolio Website" style="width: 300px; object-fit: cover;">
-  </div>
-
-  <!-- Finance Tracker -->
-  <div style="display: flex; flex-wrap: wrap; background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);">
-    <img src="https://via.placeholder.com/300x200?text=Finance+Tracker" alt="Finance Tracker" style="width: 300px; object-fit: cover;">
-    <div style="padding: 2rem; flex: 1;">
-      <h2 style="color: #0ef;">Finance Tracker (Django + PostgreSQL)</h2>
-      <p style="color: #d1d5db; margin: 1rem 0;">
-        From CLI-based JSON storage to a fully-fledged Django app, this financial literacy tracker lets users input expenses, track categories, and view historical data stored in PostgreSQL.
-      </p>
-    </div>
-  </div>
-
-  <!-- Music Recommendation System -->
-  <div style="display: flex; flex-wrap: wrap-reverse; background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);">
-    <div style="padding: 2rem; flex: 1;">
-      <h2 style="color: #0ef;">Music Recommendation System (Spotify API + PostgreSQL)</h2>
-      <p style="color: #d1d5db; margin: 1rem 0;">
-        A personalized music recommender that uses Spotify API to suggest songs based on user preferences and listening history. Evolved from Supabase to PostgreSQL with user login, history tracking, and dynamic interfaces.
-      </p>
-    </div>
-    <img src="https://via.placeholder.com/300x200?text=Music+Recommender" alt="Music Recommender" style="width: 300px; object-fit: cover;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+  
+  <!-- Music Recommendation Website -->
+  <div style="background: #1a1a1a; padding: 2rem; border-radius: 12px;">
+    <img 
+      src="https://imgs.search.brave.com/Ij4jpMYdw8s8tRITMphmOyteiDqZgQFZ1f73G-n5lnA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMx/MjUzMTgyNi9waG90/by95b3VuZy1jYXVj/YXNpYW4tYnJ1bmV0/dGUtZ2lybC13aXRo/LWhlYWRwaG9uZXMt/b3V0ZG9vcnMtb24t/c3Vubnktc3VtbWVy/LWRheS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9cU1valM2/dm9lUUFzbmRaSHEz/bVcwX0hoQzhWeGxi/ZERPUVNieVBVVWpi/TT0" 
+      alt="Music Recommender"
+      style="width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;"
+    >
+    <h2 style="color: #fff; font-size: 1.5rem;">🎵 Music Recommendation Website</h2>
+    <p style="color: #ccc; font-size: 1rem;">
+      A web app that uses Spotify API and machine learning to suggest songs based on user mood and genre preference. Built with Django and PostgreSQL.
+    </p>
   </div>
 
   <!-- Environmental Impact Analyzer -->
-  <div style="display: flex; flex-wrap: wrap; background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);">
-    <img src="https://via.placeholder.com/300x200?text=Eco+Analyzer" alt="Environmental Analyzer" style="width: 300px; object-fit: cover;">
-    <div style="padding: 2rem; flex: 1;">
-      <h2 style="color: #0ef;">Environmental Impact Analyzer</h2>
-      <p style="color: #d1d5db; margin: 1rem 0;">
-        A sustainability analysis tool that calculates personal carbon footprint based on user habits and offers actionable insights. Designed to promote eco-conscious behavior through tech.
-      </p>
-    </div>
+  <div style="background: #1a1a1a; padding: 2rem; border-radius: 12px;">
+    <img 
+      src="https://www.satseva.org.in/wp-content/uploads/2025/02/Environment-Care.jpg.webp" 
+      alt="Environmental Project" 
+      style="width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;"
+    >
+    <h2 style="color: #fff; font-size: 1.5rem;">🌍 Environmental Impact Analyzer</h2>
+    <p style="color: #ccc; font-size: 1rem;">
+      A sustainability tool that analyzes user habits to estimate carbon footprint and provide actionable suggestions. Developed using Python, Django, and Chart.js.
+    </p>
   </div>
 
-</div>
+  <!-- Portfolio Website -->
+  <div style="background: #1a1a1a; padding: 2rem; border-radius: 12px;">
+    <img 
+      src="https://i.ibb.co/4gC768qh/Minimalist-Design-Featuring-Bold-Portfolio-Text-On-Dark-Background.png" 
+      alt="Portfolio Website" 
+      style="width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;"
+    >
+    <h2 style="color: #fff; font-size: 1.5rem;">💼 My Portfolio</h2>
+    <p style="color: #ccc; font-size: 1rem;">
+      The very site you're browsing — handcrafted using Django, HTML, and pure CSS. Clean design, dynamic pages, and fully mobile responsive.
+    </p>
+  </div>
 
-<div style="text-align: center; margin-top: 3rem;">
-  <a href="{% url 'contact' %}" class="btn" style="background: #0ef; color: black;">Have a project idea? Let’s build it together!</a>
+  <!-- Email Spam Classifier -->
+  <div style="background: #1a1a1a; padding: 2rem; border-radius: 12px;">
+    <img 
+      src="https://imgs.search.brave.com/XIdcyrBvQbUPw3oQiy2SqQwXRd5EGpVQhYmn7yTg4Ng/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3Ivc3VzcGljaW91/cy1tYWxpY2lvdXMt/c3BhbS1lbWFpbC1j/b25jZXB0LXdpdGgt/YWxlcnQtbm90aWZp/Y2F0aW9uXzE4NTAz/OC04NTcuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MA" 
+      alt="Spam Classifier" 
+      style="width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;"
+    >
+    <h2 style="color: #fff; font-size: 1.5rem;">📧 Email Spam Classifier</h2>
+    <p style="color: #ccc; font-size: 1rem;">
+      A machine learning web app that classifies emails as spam or not spam using natural language processing and a Naive Bayes model. Built with Python, Scikit-learn, and Django.
+    </p>
+  </div>
+
 </div>
 {% endblock %}
