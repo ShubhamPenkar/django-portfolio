@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Shubham Penkar{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #6f42c1;
+      --dark-bg: #0d0d0d;
+      --nav-bg: #1a1a1a;
+      --text: #f0f0f0;
+      --accent: #cccccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+      animation: fadeIn 0.7s ease-in-out;
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: '\2022';
+      color: var(--primary);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+    }
+
+    a.btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      border: 1px solid var(--primary);
+      border-radius: 12px;
+      backdrop-filter: blur(4px);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+    }
+
+    a.btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 0.5rem 0 1.2rem;
+      border: none;
+      border-radius: 6px;
+      background: #2a2a2a;
+      color: white;
+    }
+
+    form button {
+      background: var(--primary);
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #5e35b1;
+    }
+
+    footer {
+      background: var(--nav-bg);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-top: 5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'skills' %}">Skills</a>
+    <a href="{% url 'projects' %}">Projects</a>
+    <a href="{% url 'contact' %}">Contact</a>
+  </nav>
+
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+  <footer>
+    &copy; 2025 — Shubham Penkar | Built with passion and Django.
+  </footer>
+</body>
+</html>

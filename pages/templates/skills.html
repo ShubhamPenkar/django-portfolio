@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Skills | Shubham Penkar{% endblock %}
+{% block content %}
+<h1 style="text-align: center; font-size: 2.5rem; color: #6f42c1;">🛠 My Skill Arsenal</h1>
+<p style="text-align: center; color: #d1d5db; max-width: 700px; margin: 0 auto 3rem;">
+  From backend wizardry to frontend flair, here’s what I bring to the code table.
+</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+  <div>
+    <h3 style="margin-bottom: 0.5rem;">Python</h3>
+    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
+      <div style="height: 100%; width: 90%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="margin-bottom: 0.5rem;">Django</h3>
+    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
+      <div style="height: 100%; width: 85%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="margin-bottom: 0.5rem;">HTML5</h3>
+    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
+      <div style="height: 100%; width: 95%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="margin-bottom: 0.5rem;">CSS3</h3>
+    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
+      <div style="height: 100%; width: 88%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="margin-bottom: 0.5rem;">JavaScript</h3>
+    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
+      <div style="height: 100%; width: 75%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="margin-bottom: 0.5rem;">PostgreSQL</h3>
+    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
+      <div style="height: 100%; width: 70%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="margin-bottom: 0.5rem;">Git & GitHub</h3>
+    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
+      <div style="height: 100%; width: 80%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="margin-bottom: 0.5rem;">Figma / UI Design</h3>
+    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
+      <div style="height: 100%; width: 60%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align: center; margin-top: 3rem;">
+  <a href="{% url 'projects' %}" class="btn">Peek My Projects</a>
+</div>
+{% endblock %}

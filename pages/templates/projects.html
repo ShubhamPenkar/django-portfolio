@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Projects | Shubham Penkar{% endblock %}
+{% block content %}
+<h1 style="text-align: center; font-size: 2.5rem; color: #0ef;">🚀 Projects I'm Proud Of</h1>
+<p style="text-align: center; color: #a1a1aa; max-width: 720px; margin: 0 auto 2rem;">
+  These projects reflect my skills in fullstack development, creative problem-solving, and clean UI/UX design.
+</p>
+
+<div style="display: flex; flex-direction: column; gap: 3rem; max-width: 1000px; margin: 0 auto;">
+
+  <!-- Portfolio Website -->
+  <div style="display: flex; flex-wrap: wrap-reverse; background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);">
+    <div style="padding: 2rem; flex: 1;">
+      <h2 style="color: #0ef;">Personal Portfolio (Django + Inline CSS)</h2>
+      <p style="color: #d1d5db; margin: 1rem 0;">
+        A handcrafted personal site built with Django. It features multi-page routing, database-driven contact forms, and zero reliance on external static files. Clean, stylish, and dark-themed with fully inline CSS.
+      </p>
+    </div>
+    <img src="https://via.placeholder.com/300x200?text=Portfolio+Site" alt="Portfolio Website" style="width: 300px; object-fit: cover;">
+  </div>
+
+  <!-- Finance Tracker -->
+  <div style="display: flex; flex-wrap: wrap; background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);">
+    <img src="https://via.placeholder.com/300x200?text=Finance+Tracker" alt="Finance Tracker" style="width: 300px; object-fit: cover;">
+    <div style="padding: 2rem; flex: 1;">
+      <h2 style="color: #0ef;">Finance Tracker (Django + PostgreSQL)</h2>
+      <p style="color: #d1d5db; margin: 1rem 0;">
+        From CLI-based JSON storage to a fully-fledged Django app, this financial literacy tracker lets users input expenses, track categories, and view historical data stored in PostgreSQL.
+      </p>
+    </div>
+  </div>
+
+  <!-- Music Recommendation System -->
+  <div style="display: flex; flex-wrap: wrap-reverse; background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);">
+    <div style="padding: 2rem; flex: 1;">
+      <h2 style="color: #0ef;">Music Recommendation System (Spotify API + PostgreSQL)</h2>
+      <p style="color: #d1d5db; margin: 1rem 0;">
+        A personalized music recommender that uses Spotify API to suggest songs based on user preferences and listening history. Evolved from Supabase to PostgreSQL with user login, history tracking, and dynamic interfaces.
+      </p>
+    </div>
+    <img src="https://via.placeholder.com/300x200?text=Music+Recommender" alt="Music Recommender" style="width: 300px; object-fit: cover;">
+  </div>
+
+  <!-- Environmental Impact Analyzer -->
+  <div style="display: flex; flex-wrap: wrap; background: #111827; border-radius: 12px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);">
+    <img src="https://via.placeholder.com/300x200?text=Eco+Analyzer" alt="Environmental Analyzer" style="width: 300px; object-fit: cover;">
+    <div style="padding: 2rem; flex: 1;">
+      <h2 style="color: #0ef;">Environmental Impact Analyzer</h2>
+      <p style="color: #d1d5db; margin: 1rem 0;">
+        A sustainability analysis tool that calculates personal carbon footprint based on user habits and offers actionable insights. Designed to promote eco-conscious behavior through tech.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<div style="text-align: center; margin-top: 3rem;">
+  <a href="{% url 'contact' %}" class="btn" style="background: #0ef; color: black;">Have a project idea? Let’s build it together!</a>
+</div>
+{% endblock %}

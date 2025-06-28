@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Home | Shubham Penkar{% endblock %}
+{% block content %}
+<div style="text-align: center;">
+  <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">Hey 👋 I'm <span style="color: #6f42c1;">Shubham Penkar</span></h1>
+  <p style="font-size: 1.25rem; max-width: 700px; margin: auto; color: #d1d5db;">
+    I build beautiful, functional websites & apps with a passion for design, performance, and clean code. Let's make your vision digital.
+  </p>
+  <div style="margin-top: 2rem;">
+    <a href="/projects" class="btn">Explore Projects</a>
+    <a href="{% url 'contact' %}" class="btn" style="margin-left: 1rem; background: transparent; border: 1px solid #6f42c1;">Contact Me</a>
+  </div>
+</div>
+
+<div style="margin-top: 4rem; text-align: center;">
+  <h2 style="color: #6f42c1;">Tech Stack</h2>
+  <p>Python • Django • HTML • CSS • JavaScript • PostgreSQL • Git</p>
+  <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+    <i class="fab fa-python fa-3x"></i>
+    <i class="fab fa-html5 fa-3x"></i>
+    <i class="fab fa-css3-alt fa-3x"></i>
+    <i class="fab fa-js-square fa-3x"></i>
+    <i class="fab fa-git-alt fa-3x"></i>
+    <i class="fas fa-database fa-3x"></i>
+  </div>
+</div>
+{% endblock %}

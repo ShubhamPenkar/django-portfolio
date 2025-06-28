@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}About | Shubham Penkar{% endblock %}
+{% block content %}
+<section style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 2rem;">
+  <div>
+    <img src="https://iili.io/FRaT0OB.jpg" alt="avatar" style="width: 100%; max-width: 300px; border-radius: 50%; border: 4px solid #6f42c1;">
+  </div>
+  <div>
+    <h1 style="font-size: 2.5rem; color: #6f42c1;">Who Am I?</h1>
+    <p style="font-size: 1.1rem; color: #d1d5db;">
+      I'm <strong>Shubham Penkar</strong>, a software developer with a love for elegant code and digital storytelling. I started with HTML back when marquee tags were cool (don’t judge 👀), and now I design full-stack web apps with Django, PostgreSQL, and vibes.
+    </p>
+    <p style="margin-top: 1rem; font-style: italic; color: #9ca3af;">
+      "When I’m not coding, I’m probably exploring sci-fi, sketching interfaces, or testing random APIs just for fun."
+    </p>
+    <a class="btn" href="{% url 'projects' %}" style="margin-top: 1.5rem;">View My Work</a>
+  </div>
+</section>
+
+<section style="margin-top: 4rem;">
+  <h2 style="text-align: center; color: #6f42c1;">💡 Random Facts</h2>
+  <ul style="max-width: 700px; margin: 1rem auto; line-height: 1.8;">
+    <li>I learned Python by building a calculator and breaking it… repeatedly.</li>
+    <li>I once debugged a bug for 3 hours — the issue was a missing semicolon. 😭</li>
+    <li>I love VS Code themes and have probably installed too many.</li>
+    <li>I believe every great project starts with “Wait, what if we just…”</li>
+  </ul>
+</section>
+{% endblock %}

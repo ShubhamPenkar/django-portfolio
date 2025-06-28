@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Contact | Shubham Penkar{% endblock %}
+{% block content %}
+<h1 style="text-align: center; font-size: 2.5rem; color: #6f42c1;">📬 Let's Get In Touch</h1>
+<p style="text-align: center; color: #d1d5db; max-width: 700px; margin: 0 auto 2rem;">
+  Want to work together, ask a question, or just vibe about tech? Drop a message below 👇
+</p>
+
+<form method="post" style="max-width: 600px; margin: 0 auto; padding: 2rem; background: #1e1e2f; border-radius: 16px; box-shadow: 0 0 20px rgba(111, 66, 193, 0.3);">
+  {% csrf_token %}
+
+  <label style="display: block; margin-bottom: 1rem;">
+    <span style="color: #a78bfa;">Name</span>
+    <input type="text" name="name" placeholder="Your name..." required
+      style="width: 100%; padding: 0.75rem 1rem; margin-top: 0.25rem; border-radius: 8px; background: #2b2d42; color: #f8f8f8; border: none;">
+  </label>
+
+  <label style="display: block; margin-bottom: 1rem;">
+    <span style="color: #a78bfa;">Email</span>
+    <input type="email" name="email" placeholder="you@example.com" required
+      style="width: 100%; padding: 0.75rem 1rem; margin-top: 0.25rem; border-radius: 8px; background: #2b2d42; color: #f8f8f8; border: none;">
+  </label>
+
+  <label style="display: block; margin-bottom: 1rem;">
+    <span style="color: #a78bfa;">Phone</span>
+    <input type="text" name="number" placeholder="1234567890" required
+      style="width: 100%; padding: 0.75rem 1rem; margin-top: 0.25rem; border-radius: 8px; background: #2b2d42; color: #f8f8f8; border: none;">
+  </label>
+
+  <label style="display: block; margin-bottom: 1.5rem;">
+    <span style="color: #a78bfa;">Message</span>
+    <textarea name="content" rows="5" placeholder="Say hello..." required
+      style="width: 100%; padding: 0.75rem 1rem; margin-top: 0.25rem; border-radius: 8px; background: #2b2d42; color: #f8f8f8; border: none;"></textarea>
+  </label>
+
+  <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+</form>
+
+<div style="text-align: center; margin-top: 3rem;">
+  <p style="color: #9ca3af;">Alternatively, email me at <strong style="color: #fff;">shubham.penkar@email.com</strong></p>
+</div>
+{% endblock %}
