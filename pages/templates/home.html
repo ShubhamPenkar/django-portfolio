@@ -1,9 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Home | Shubham Penkar — Data Science & ML/AI Engineer{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
-<section class="hero-wrapper">
+<section class="hero-wrapper" style="padding: 2.5rem 1rem 3rem;">
+  <!-- Landing Page Headshot -->
+  <div style="margin-bottom: 2rem;">
+    <div style="position: relative; display: inline-block;">
+      <img 
+        src="{% static 'images/shubham_portrait.jpg' %}" 
+        alt="Shubham Penkar" 
+        style="width: 170px; height: 170px; object-fit: cover; object-position: center top; border-radius: 50%; border: 3px solid rgba(139, 92, 246, 0.6); box-shadow: 0 0 35px rgba(139, 92, 246, 0.45); background: #161824;"
+      >
+      <span style="position: absolute; bottom: 8px; right: 8px; width: 20px; height: 20px; background: #22c55e; border: 3px solid #090a0f; border-radius: 50%; box-shadow: 0 0 10px #22c55e;" title="Available for opportunities"></span>
+    </div>
+  </div>
+
   <div class="status-indicator">
     <span class="status-dot"></span>
     Seeking Data Science, ML/AI, or Data Engineering Roles
@@ -27,8 +40,8 @@
     </a>
   </div>
 
-  <!-- Key Metrics Bar -->
-  <div class="hero-stats">
+  <!-- Key Metrics Bar (3 Clean Stats) -->
+  <div class="hero-stats" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
     <div class="stat-item">
       <div class="stat-number gradient-text">2</div>
       <div class="stat-label">Internships (JioStar, Piramal)</div>
@@ -40,10 +53,6 @@
     <div class="stat-item">
       <div class="stat-number gradient-text">8.3</div>
       <div class="stat-label">B.Tech ECS CGPA</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number gradient-text">3.5%</div>
-      <div class="stat-label">Forecasting MAPE (MealMind)</div>
     </div>
   </div>
 </section>

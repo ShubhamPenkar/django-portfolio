@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Experience & Bio | Shubham Penkar{% endblock %}
 
 {% block content %}
@@ -70,7 +71,7 @@
   <div style="display: flex; flex-direction: column; gap: 2rem;">
     <!-- JioStar -->
     <div class="glass-card" style="padding: 2.25rem; border-left: 4px solid var(--primary-light);">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem;">
         <div>
           <h3 style="font-size: 1.45rem; color: #fff; margin: 0;">Data Science Intern</h3>
           <div style="color: var(--primary-light); font-weight: 600; font-size: 1.05rem;">JioStar • Mumbai, India</div>
@@ -80,19 +81,36 @@
         </span>
       </div>
 
-      <ul style="color: var(--text-muted); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 1.25rem;">
-        <li><strong>Titan AI:</strong> Built configurable AI agent features on a Rails + Vertex AI platform with permission-based knowledge retrieval and strict execution controls.</li>
-        <li><strong>Text-to-3D Cricket Replay System:</strong> Developed an end-to-end simulation system (React, Python, Unreal Engine 5) converting live match commentary into interactive broadcast-style 3D replays.</li>
-        <li><strong>Full Lifecycle Engineering:</strong> Shipped features end-to-end, including database migrations, performant REST APIs, automated tests, and cross-service integrations.</li>
-      </ul>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center;">
+        <div>
+          <ul style="color: var(--text-muted); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 1.25rem;">
+            <li><strong>Titan AI:</strong> Built configurable AI agent features on a Rails + Vertex AI platform with permission-based knowledge retrieval and strict execution controls.</li>
+            <li><strong>Text-to-3D Cricket Replay System:</strong> Developed an end-to-end simulation system (React, Python, Unreal Engine 5) converting live match commentary into interactive broadcast-style 3D replays.</li>
+            <li><strong>Full Lifecycle Engineering:</strong> Shipped features end-to-end, including database migrations, performant REST APIs, automated tests, and cross-service integrations.</li>
+          </ul>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-        <span class="tag-badge">Python</span>
-        <span class="tag-badge">Vertex AI</span>
-        <span class="tag-badge">Rails</span>
-        <span class="tag-badge">React</span>
-        <span class="tag-badge">Unreal Engine 5</span>
-        <span class="tag-badge">REST APIs</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span class="tag-badge">Python</span>
+            <span class="tag-badge">Vertex AI</span>
+            <span class="tag-badge">Rails</span>
+            <span class="tag-badge">React</span>
+            <span class="tag-badge">Unreal Engine 5</span>
+            <span class="tag-badge">REST APIs</span>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <div style="border-radius: 16px; overflow: hidden; border: 1px solid rgba(139, 92, 246, 0.35); box-shadow: 0 10px 25px rgba(0,0,0,0.4); max-width: 320px; margin: 0 auto; background: #161824;">
+            <img 
+              src="{% static 'images/jiostar_internship.jpg' %}" 
+              alt="JioStar Internship Team" 
+              style="width: 100%; height: auto; max-height: 290px; object-fit: cover; display: block;"
+            >
+            <div style="background: rgba(22, 24, 38, 0.95); padding: 0.5rem 0.75rem; font-size: 0.8rem; color: var(--text-muted); text-align: center; border-top: 1px solid rgba(255,255,255,0.06);">
+              <i class="fas fa-users" style="color: var(--primary-light); margin-right: 5px;"></i> JioStar Data Science Team
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

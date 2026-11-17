@@ -37,7 +37,10 @@ except ImportError:
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY',
-    'django-insecure-%qvc=xl%8ecvk-f9ia$-x7y2l17)mq94=6p0-#+japtop&5w-e'
+    os.environ.get(
+        'SECRET_KEY',
+        'django-insecure-%qvc=xl%8ecvk-f9ia$-x7y2l17)mq94=6p0-#+japtop&5w-e'
+    )
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
