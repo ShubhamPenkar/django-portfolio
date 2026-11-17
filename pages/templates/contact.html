@@ -1,42 +1,141 @@
 {% extends 'base.html' %}
-{% block title %}Contact | Shubham Penkar{% endblock %}
+{% block title %}Contact | Shubham Penkar — Let's Connect{% endblock %}
+
 {% block content %}
-<h1 style="text-align: center; font-size: 2.5rem; color: #6f42c1;">📬 Let's Get In Touch</h1>
-<p style="text-align: center; color: #d1d5db; max-width: 700px; margin: 0 auto 2rem;">
-  Want to work together, ask a question, or just vibe about tech? Drop a message below 👇
-</p>
+<div style="text-align: center; margin-bottom: 3.5rem;">
+  <span class="section-tag"><i class="fas fa-paper-plane"></i> Direct Channels</span>
+  <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">
+    Let's <span class="gradient-text">Connect</span>
+  </h1>
+  <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto; font-size: 1.1rem;">
+    Interested in hiring for Data Science, ML/AI, or Data Engineering roles? Have a technical query or collaboration idea? Drop a line below.
+  </p>
+</div>
 
-<form method="post" style="max-width: 600px; margin: 0 auto; padding: 2rem; background: #1e1e2f; border-radius: 16px; box-shadow: 0 0 20px rgba(111, 66, 193, 0.3);">
-  {% csrf_token %}
+<!-- Two-Column Contact Layout -->
+<div class="contact-layout">
+  <!-- Contact Info Card (Left) -->
+  <div class="glass-card contact-info-card">
+    <div>
+      <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">
+        Get in Touch
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+        Actively seeking full-time and new graduate roles in Data Science, Machine Learning, and Data Engineering. Open to conversations and opportunities.
+      </p>
 
-  <label style="display: block; margin-bottom: 1rem;">
-    <span style="color: #a78bfa;">Name</span>
-    <input type="text" name="name" placeholder="Your name..." required
-      style="width: 100%; padding: 0.75rem 1rem; margin-top: 0.25rem; border-radius: 8px; background: #2b2d42; color: #f8f8f8; border: none;">
-  </label>
+      <div class="contact-methods">
+        <div class="contact-method-item">
+          <div class="contact-icon-box">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:shubhamworks1718@gmail.com" class="contact-value">shubhamworks1718@gmail.com</a>
+          </div>
+        </div>
 
-  <label style="display: block; margin-bottom: 1rem;">
-    <span style="color: #a78bfa;">Email</span>
-    <input type="email" name="email" placeholder="you@example.com" required
-      style="width: 100%; padding: 0.75rem 1rem; margin-top: 0.25rem; border-radius: 8px; background: #2b2d42; color: #f8f8f8; border: none;">
-  </label>
+        <div class="contact-method-item">
+          <div class="contact-icon-box">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <a href="tel:+919136507755" class="contact-value">+91 9136507755</a>
+          </div>
+        </div>
 
-  <label style="display: block; margin-bottom: 1rem;">
-    <span style="color: #a78bfa;">Phone</span>
-    <input type="text" name="number" placeholder="1234567890" required
-      style="width: 100%; padding: 0.75rem 1rem; margin-top: 0.25rem; border-radius: 8px; background: #2b2d42; color: #f8f8f8; border: none;">
-  </label>
+        <div class="contact-method-item">
+          <div class="contact-icon-box">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <div class="contact-label">Location</div>
+            <span class="contact-value">Mumbai, India (Open to Remote / Relocation)</span>
+          </div>
+        </div>
 
-  <label style="display: block; margin-bottom: 1.5rem;">
-    <span style="color: #a78bfa;">Message</span>
-    <textarea name="content" rows="5" placeholder="Say hello..." required
-      style="width: 100%; padding: 0.75rem 1rem; margin-top: 0.25rem; border-radius: 8px; background: #2b2d42; color: #f8f8f8; border: none;"></textarea>
-  </label>
+        <div class="contact-method-item">
+          <div class="contact-icon-box">
+            <i class="fab fa-github"></i>
+          </div>
+          <div>
+            <div class="contact-label">GitHub</div>
+            <a href="https://github.com/ShubhamPenkar" target="_blank" rel="noopener noreferrer" class="contact-value">github.com/ShubhamPenkar</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-</form>
+    <div>
+      <div class="contact-label" style="margin-bottom: 0.75rem;">Social Profiles</div>
+      <div class="social-strip" style="margin-top: 0;">
+        <a href="https://github.com/ShubhamPenkar" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:shubhamworks1718@gmail.com" class="social-icon-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+919136507755" class="social-icon-btn" title="Call">
+          <i class="fas fa-phone"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
-<div style="text-align: center; margin-top: 3rem;">
-  <p style="color: #9ca3af;">Alternatively, email me at <strong style="color: #fff;">shubham.penkar@email.com</strong></p>
+  <!-- Message Form Card (Right) -->
+  <div class="glass-card" style="padding: 2.25rem;">
+    <h3 style="font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem;">
+      Send a Direct Message
+    </h3>
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="{{ form.name.id_for_label }}" class="form-label">Full Name *</label>
+        {{ form.name }}
+        {% if form.name.errors %}
+          <div class="form-error">
+            <i class="fas fa-exclamation-circle"></i> {{ form.name.errors|striptags }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="{{ form.email.id_for_label }}" class="form-label">Email Address *</label>
+        {{ form.email }}
+        {% if form.email.errors %}
+          <div class="form-error">
+            <i class="fas fa-exclamation-circle"></i> {{ form.email.errors|striptags }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="{{ form.number.id_for_label }}" class="form-label">Phone Number (Optional)</label>
+        {{ form.number }}
+        {% if form.number.errors %}
+          <div class="form-error">
+            <i class="fas fa-exclamation-circle"></i> {{ form.number.errors|striptags }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="form-group" style="margin-bottom: 1.75rem;">
+        <label for="{{ form.content.id_for_label }}" class="form-label">Message *</label>
+        {{ form.content }}
+        {% if form.content.errors %}
+          <div class="form-error">
+            <i class="fas fa-exclamation-circle"></i> {{ form.content.errors|striptags }}
+          </div>
+        {% endif %}
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%;">
+        <i class="fas fa-paper-plane"></i> Send Message to Shubham
+      </button>
+    </form>
+  </div>
 </div>
 {% endblock %}

@@ -1,27 +1,138 @@
 {% extends 'base.html' %}
-{% block title %}Home | Shubham Penkar{% endblock %}
-{% block content %}
-<div style="text-align: center;">
-  <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">Hey 👋 I'm <span style="color: #6f42c1;">Shubham Penkar</span></h1>
-  <p style="font-size: 1.25rem; max-width: 700px; margin: auto; color: #d1d5db;">
-    I build beautiful, functional websites & apps with a passion for design, performance, and clean code. Let's make your vision digital.
-  </p>
-  <div style="margin-top: 2rem;">
-    <a href="/projects" class="btn">Explore Projects</a>
-    <a href="{% url 'contact' %}" class="btn" style="margin-left: 1rem; background: transparent; border: 1px solid #6f42c1;">Contact Me</a>
-  </div>
-</div>
+{% block title %}Home | Shubham Penkar — Data Science & ML/AI Engineer{% endblock %}
 
-<div style="margin-top: 4rem; text-align: center;">
-  <h2 style="color: #6f42c1;">Tech Stack</h2>
-  <p>Python • Django • HTML • CSS • JavaScript • PostgreSQL • Git</p>
-  <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-    <i class="fab fa-python fa-3x"></i>
-    <i class="fab fa-html5 fa-3x"></i>
-    <i class="fab fa-css3-alt fa-3x"></i>
-    <i class="fab fa-js-square fa-3x"></i>
-    <i class="fab fa-git-alt fa-3x"></i>
-    <i class="fas fa-database fa-3x"></i>
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-wrapper">
+  <div class="status-indicator">
+    <span class="status-dot"></span>
+    Seeking Data Science, ML/AI, or Data Engineering Roles
   </div>
-</div>
+
+  <h1 class="hero-title">
+    Data Science, <span class="gradient-text">Machine Learning</span><br>
+    & Scalable Decision Systems.
+  </h1>
+
+  <p class="hero-subtitle">
+    Hey, I'm <strong style="color: #fff;">Shubham Penkar</strong> 👋 — a fourth-year Electronics and Computer Science student at <strong>Vidyalankar Institute of Technology, Mumbai</strong> (CGPA 8.3) with two industry internships (<strong>JioStar</strong>, <strong>Piramal Pharma</strong>), a published NLP research paper, and production projects across forecasting, mathematical optimization, and speech AI.
+  </p>
+
+  <div class="hero-actions">
+    <a href="{% url 'projects' %}" class="btn btn-primary">
+      <i class="fas fa-microchip"></i> Explore ML & Decision Projects
+    </a>
+    <a href="{% url 'about' %}" class="btn btn-secondary">
+      <i class="fas fa-briefcase"></i> View Experience & Publications
+    </a>
+  </div>
+
+  <!-- Key Metrics Bar -->
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-number gradient-text">2</div>
+      <div class="stat-label">Internships (JioStar, Piramal)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number gradient-text">1</div>
+      <div class="stat-label">Published NLP Paper (IRJMETS)</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number gradient-text">8.3</div>
+      <div class="stat-label">B.Tech ECS CGPA</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number gradient-text">3.5%</div>
+      <div class="stat-label">Forecasting MAPE (MealMind)</div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Technical Arsenal -->
+<section style="margin-top: 5rem; text-align: center;">
+  <span class="section-tag"><i class="fas fa-code"></i> Technical Stack</span>
+  <h2 style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">Skills & Technologies</h2>
+  <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto 2rem;">
+    Specialized in building end-to-end machine learning pipelines, explainable decision models, and high-throughput backend services.
+  </p>
+
+  <div class="tech-chips">
+    <div class="tech-chip"><i class="fab fa-python"></i> Python</div>
+    <div class="tech-chip"><i class="fas fa-brain"></i> Scikit-learn</div>
+    <div class="tech-chip"><i class="fas fa-chart-line"></i> XGBoost / LightGBM</div>
+    <div class="tech-chip"><i class="fas fa-eye"></i> SHAP & LIME (XAI)</div>
+    <div class="tech-chip"><i class="fas fa-robot"></i> Vertex AI & Gemini API</div>
+    <div class="tech-chip"><i class="fas fa-microphone"></i> faster-whisper (Speech AI)</div>
+    <div class="tech-chip"><i class="fas fa-calculator"></i> MILP (SciPy) & Monte Carlo</div>
+    <div class="tech-chip"><i class="fas fa-bolt"></i> FastAPI & Pydantic</div>
+    <div class="tech-chip"><i class="fas fa-database"></i> PostgreSQL & SQLAlchemy</div>
+    <div class="tech-chip"><i class="fas fa-network-wired"></i> Celery & Redis</div>
+    <div class="tech-chip"><i class="fab fa-react"></i> React</div>
+    <div class="tech-chip"><i class="fab fa-git-alt"></i> Git & Docker</div>
+  </div>
+</section>
+
+<!-- Featured Projects Teaser -->
+{% if featured_projects %}
+<section style="margin-top: 6rem;">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+    <div>
+      <span class="section-tag"><i class="fas fa-star"></i> Flagship Work</span>
+      <h2 style="font-size: 2.2rem; font-weight: 700; color: #fff; margin: 0;">Featured Projects</h2>
+    </div>
+    <a href="{% url 'projects' %}" class="project-link live-link" style="font-size: 1rem;">
+      View All Projects <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <div class="projects-grid">
+    {% for project in featured_projects %}
+    <div class="glass-card project-card">
+      {% if project.image_url %}
+      <div class="project-image-box">
+        <img src="{{ project.image_url }}" alt="{{ project.title }}" loading="lazy" onerror="this.parentElement.style.display='none'">
+      </div>
+      {% endif %}
+
+      <div class="project-body">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-description">{{ project.description }}</p>
+
+        {% if project.tech_list %}
+        <div class="project-tags">
+          {% for tech in project.tech_list %}
+          <span class="tag-badge">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="project-links">
+          {% if project.github_url %}
+          <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="project-link">
+            <i class="fab fa-github"></i> Repository
+          </a>
+          {% endif %}
+          <a href="{% url 'projects' %}" class="project-link live-link">
+            <i class="fas fa-info-circle"></i> Project Details
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- Quick Contact Banner -->
+<section style="margin-top: 6rem; text-align: center;">
+  <div class="glass-card" style="padding: 3.5rem 2rem; background: linear-gradient(135deg, rgba(22, 24, 38, 0.8) 0%, rgba(139, 92, 246, 0.12) 100%); border-color: rgba(139, 92, 246, 0.3);">
+    <h2 style="font-size: 2.25rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">Looking for an ML, Data Science, or Backend Engineer?</h2>
+    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem;">
+      I am open to new graduate opportunities, full-time positions, and impactful data engineering challenges. Let's connect.
+    </p>
+    <a href="{% url 'contact' %}" class="btn btn-primary">
+      <i class="fas fa-envelope"></i> Get In Touch with Shubham
+    </a>
+  </div>
+</section>
 {% endblock %}

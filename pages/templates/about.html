@@ -1,34 +1,232 @@
 {% extends 'base.html' %}
-{% block title %}About | Shubham Penkar{% endblock %}
+{% block title %}Experience & Bio | Shubham Penkar{% endblock %}
+
 {% block content %}
+<div style="text-align: center; margin-bottom: 3.5rem;">
+  <span class="section-tag"><i class="fas fa-id-card"></i> Profile & Background</span>
+  <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">
+    Experience & <span class="gradient-text">Biography</span>
+  </h1>
+  <p style="color: var(--text-muted); max-width: 680px; margin: 0 auto; font-size: 1.1rem;">
+    Fourth-year Electronics and Computer Science student with industry internship experience, published research in NLP, and production projects in AI & mathematical optimization.
+  </p>
+</div>
 
-<!-- Hero Section -->
-<section style="display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem;">
+<!-- Bio & Overview Split -->
+<section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center; margin-bottom: 5rem;">
+  <!-- Avatar Card -->
+  <div style="text-align: center;">
+    <div style="position: relative; display: inline-block;">
+      <img 
+        src="https://iili.io/FRaT0OB.jpg" 
+        alt="Shubham Penkar" 
+        style="width: 260px; height: 260px; object-fit: cover; border-radius: 28px; border: 3px solid rgba(139, 92, 246, 0.5); box-shadow: 0 0 30px rgba(139, 92, 246, 0.35); background: #161823;"
+        onerror="this.src='https://ui-avatars.com/api/?name=Shubham+Penkar&background=6f42c1&color=fff&size=260'"
+      >
+    </div>
+
+    <div style="margin-top: 1.5rem;">
+      <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 0.25rem;">Shubham Penkar</h3>
+      <p style="color: var(--primary-light); font-weight: 500; font-size: 0.95rem; margin-bottom: 0.75rem;">
+        Data Science • ML/AI • Data Engineering
+      </p>
+      <div style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+        <span class="tag-badge"><i class="fas fa-map-marker-alt"></i> Mumbai, India</span>
+        <span class="tag-badge"><i class="fas fa-graduation-cap"></i> B.Tech ECS (CGPA 8.3)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary Text -->
   <div>
-    <img src="https://iili.io/FRaT0OB.jpg" alt="Shubham Penkar" style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 5px solid #9d4edd; box-shadow: 0 0 20px #6f42c1;">
-  </div>
-  <div style="max-width: 600px;">
-    <h1 style="font-size: 2.8rem; color: #9d4edd; margin-bottom: 1rem;">Hey, I’m Shubham 🚀</h1>
-    <p style="color: #d1d5db; font-size: 1.1rem; line-height: 1.7;">
-      A creative full-stack developer who transforms caffeine into clean code. Whether it's building responsive UIs or designing smart backends,
-      I love crafting elegant and performant web experiences using Django, PostgreSQL, and a sprinkle of design intuition.
+    <h2 style="font-size: 1.85rem; font-weight: 700; color: #fff; margin-bottom: 1.25rem; line-height: 1.3;">
+      Bridging theoretical machine learning with <span class="gradient-text">production decision systems</span>.
+    </h2>
+
+    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.25rem;">
+      I'm an engineer specializing in Data Science, Machine Learning, and scalable Backend systems. Having interned with <strong>JioStar</strong> and <strong>Piramal Pharma</strong>, I've developed AI agent workflows, text-to-3D simulation pipelines, and unsupervised distributor network segmentation at enterprise scale.
     </p>
-    <p style="margin-top: 1rem; font-size: 1rem; color: #aaa; font-style: italic;">
-      Currently geeking out over machine learning models and perfecting the dark mode aesthetic ☕🌙.
+
+    <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 2rem;">
+      My technical focus centers on <strong>explainable AI (SHAP/LIME)</strong>, <strong>mathematical optimization (MILP)</strong>, and high-performance speech/conversational architectures using <strong>FastAPI</strong>, <strong>Pydantic</strong>, and <strong>Vertex AI</strong>.
     </p>
-    <a class="btn" href="{% url 'projects' %}" style="margin-top: 1.5rem;">Explore My Projects</a>
+
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a href="{% url 'contact' %}" class="btn btn-primary">
+        <i class="fas fa-envelope"></i> Contact Shubham
+      </a>
+      <a href="https://github.com/ShubhamPenkar" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+        <i class="fab fa-github"></i> GitHub Profile
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- Fun Facts Section -->
-<section style="margin-top: 5rem; text-align: center;">
-  <h2 style="color: #6f42c1; font-size: 2.2rem; margin-bottom: 1.5rem;">✨ Things You Should Know</h2>
-  <ul style="max-width: 800px; margin: 0 auto; padding: 0; list-style: none; color: #f3f4f6; line-height: 2;">
-    <li>💻 Started coding by breaking calculators... and fixing them.</li>
-    <li>🧠 I debug like Sherlock — intense, curious, and slightly dramatic.</li>
-    <li>🎨 UI design is my therapy. Yes, I judge bad font choices.</li>
-    <li>⚙️ Side quests include building APIs I never launch (yet).</li>
-  </ul>
+<!-- Work Experience Section -->
+<section style="margin-bottom: 5rem;">
+  <span class="section-tag"><i class="fas fa-briefcase"></i> Work History</span>
+  <h2 style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 2rem;">Industry Experience</h2>
+
+  <div style="display: flex; flex-direction: column; gap: 2rem;">
+    <!-- JioStar -->
+    <div class="glass-card" style="padding: 2.25rem; border-left: 4px solid var(--primary-light);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+        <div>
+          <h3 style="font-size: 1.45rem; color: #fff; margin: 0;">Data Science Intern</h3>
+          <div style="color: var(--primary-light); font-weight: 600; font-size: 1.05rem;">JioStar • Mumbai, India</div>
+        </div>
+        <span class="tag-badge" style="background: rgba(139, 92, 246, 0.25); color: #fff; font-weight: 600;">
+          Jun 2026 – Aug 2026
+        </span>
+      </div>
+
+      <ul style="color: var(--text-muted); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 1.25rem;">
+        <li><strong>Titan AI:</strong> Built configurable AI agent features on a Rails + Vertex AI platform with permission-based knowledge retrieval and strict execution controls.</li>
+        <li><strong>Text-to-3D Cricket Replay System:</strong> Developed an end-to-end simulation system (React, Python, Unreal Engine 5) converting live match commentary into interactive broadcast-style 3D replays.</li>
+        <li><strong>Full Lifecycle Engineering:</strong> Shipped features end-to-end, including database migrations, performant REST APIs, automated tests, and cross-service integrations.</li>
+      </ul>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <span class="tag-badge">Python</span>
+        <span class="tag-badge">Vertex AI</span>
+        <span class="tag-badge">Rails</span>
+        <span class="tag-badge">React</span>
+        <span class="tag-badge">Unreal Engine 5</span>
+        <span class="tag-badge">REST APIs</span>
+      </div>
+    </div>
+
+    <!-- Piramal Pharma -->
+    <div class="glass-card" style="padding: 2.25rem; border-left: 4px solid #6366f1;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+        <div>
+          <h3 style="font-size: 1.45rem; color: #fff; margin: 0;">Business Analytics Intern</h3>
+          <div style="color: #818cf8; font-weight: 600; font-size: 1.05rem;">Piramal Pharma Ltd. • Mumbai, India</div>
+        </div>
+        <span class="tag-badge" style="background: rgba(99, 102, 241, 0.25); color: #fff; font-weight: 600;">
+          Dec 2025 – Jan 2026
+        </span>
+      </div>
+
+      <ul style="color: var(--text-muted); line-height: 1.8; padding-left: 1.25rem; margin-bottom: 1.25rem;">
+        <li>Identified high-value, at-risk, and underperforming distributor segments from messy real-world pharmaceutical sales data using Python, Pandas, and Excel.</li>
+        <li>Segmented the distributor network into strategic performance tiers using <strong>K-Means clustering and PCA</strong> within 5 weeks, delivering actionable business recommendations to leadership.</li>
+      </ul>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <span class="tag-badge">Python</span>
+        <span class="tag-badge">Pandas</span>
+        <span class="tag-badge">K-Means</span>
+        <span class="tag-badge">PCA</span>
+        <span class="tag-badge">Business Analytics</span>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- Education & Academics -->
+<section style="margin-bottom: 5rem;">
+  <span class="section-tag"><i class="fas fa-graduation-cap"></i> Academic Background</span>
+  <h2 style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 2rem;">Education</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.75rem;">
+    <!-- Degree -->
+    <div class="glass-card">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+        <span class="tag-badge" style="color: #86efac; border-color: rgba(34, 197, 94, 0.3);">CGPA: 8.3</span>
+        <span style="color: var(--text-faint); font-size: 0.85rem;">2023 – 2027</span>
+      </div>
+      <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.35rem;">B.Tech in Electronics and Computer Science</h3>
+      <p style="color: var(--primary-light); font-weight: 500; font-size: 0.95rem; margin-bottom: 0.5rem;">
+        Vidyalankar Institute of Technology, Mumbai
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.88rem;">
+        Fourth-year student specializing in AI systems, data engineering, and computing architectures.
+      </p>
+    </div>
+
+    <!-- 12th -->
+    <div class="glass-card">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+        <span class="tag-badge">Higher Secondary (12th)</span>
+        <span style="color: var(--text-faint); font-size: 0.85rem;">2021 – 2023</span>
+      </div>
+      <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.35rem;">Science Stream (HSC)</h3>
+      <p style="color: var(--primary-light); font-weight: 500; font-size: 0.95rem; margin-bottom: 0.5rem;">
+        Dnyan Ganga Degree & Junior College
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.88rem;">
+        Focus on Physics, Chemistry, and Mathematics foundations.
+      </p>
+    </div>
+
+    <!-- 10th -->
+    <div class="glass-card">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;">
+        <span class="tag-badge">ICSE Board (10th)</span>
+        <span style="color: var(--text-faint); font-size: 0.85rem;">2021</span>
+      </div>
+      <h3 style="font-size: 1.25rem; color: #fff; margin-bottom: 0.35rem;">Secondary School Education</h3>
+      <p style="color: var(--primary-light); font-weight: 500; font-size: 0.95rem; margin-bottom: 0.5rem;">
+        Smt. Sulochanadevi Singhania School
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.88rem;">
+        Distinguished academic record with emphasis on sciences and computer applications.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Publications & Certifications -->
+<section style="margin-bottom: 4rem;">
+  <span class="section-tag"><i class="fas fa-award"></i> Research & Credentials</span>
+  <h2 style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 2rem;">Publications & Certifications</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+    <!-- Published Paper -->
+    <div class="glass-card" style="border-color: rgba(139, 92, 246, 0.4); background: linear-gradient(135deg, rgba(18, 20, 30, 0.8) 0%, rgba(139, 92, 246, 0.08) 100%);">
+      <div style="font-size: 2rem; color: var(--primary-light); margin-bottom: 0.75rem;">
+        <i class="fas fa-file-alt"></i>
+      </div>
+      <span class="tag-badge" style="background: rgba(139, 92, 246, 0.2); color: #c4b5fd; margin-bottom: 0.75rem;">
+        Published Paper • IRJMETS 2025
+      </span>
+      <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 0.5rem;">
+        Multilingual Social Media Toxicity Detection System using Machine Learning
+      </h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+        Authored and published research paper investigating multi-lingual text classification pipelines to detect hate speech, toxicity, and abusive content in online social platforms.
+      </p>
+    </div>
+
+    <!-- Certifications Card -->
+    <div class="glass-card">
+      <div style="font-size: 2rem; color: #818cf8; margin-bottom: 0.75rem;">
+        <i class="fas fa-certificate"></i>
+      </div>
+      <span class="tag-badge" style="margin-bottom: 0.75rem;">Verified Certifications</span>
+      <h3 style="font-size: 1.3rem; color: #fff; margin-bottom: 1rem;">
+        Professional Credentials
+      </h3>
+      
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <i class="fas fa-check-circle" style="color: #22c55e; margin-top: 0.25rem;"></i>
+          <div>
+            <div style="font-weight: 600; color: #fff;">Machine Learning Fundamentals</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Infosys Springboard</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <i class="fas fa-check-circle" style="color: #22c55e; margin-top: 0.25rem;"></i>
+          <div>
+            <div style="font-weight: 600; color: #fff;">Python for Web Development</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">CDAC (Centre for Development of Advanced Computing)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}

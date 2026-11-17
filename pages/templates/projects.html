@@ -1,64 +1,198 @@
 {% extends 'base.html' %}
-{% block title %}Projects | Shubham Penkar{% endblock %}
+{% block title %}Projects | Shubham Penkar — ML/AI & Decision Systems{% endblock %}
+
 {% block content %}
-<h1 style="text-align: center; font-size: 2.8rem; color: #6f42c1;">📂 Featured Projects</h1>
-<p style="text-align: center; color: #d1d5db; max-width: 800px; margin: 0 auto 3.5rem; font-size: 1.1rem;">
-  A collection of my most impactful work — built with code, passion, and caffeine ☕.
-</p>
+<div style="text-align: center; margin-bottom: 3.5rem;">
+  <span class="section-tag"><i class="fas fa-cubes"></i> Engineering Portfolio</span>
+  <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">
+    Featured <span class="gradient-text">Projects</span>
+  </h1>
+  <p style="color: var(--text-muted); max-width: 680px; margin: 0 auto; font-size: 1.1rem;">
+    End-to-end machine learning pipelines, explainable decision intelligence platforms, and mathematical optimization systems.
+  </p>
+</div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
-  
-  <!-- Music Recommendation Website -->
-  <div style="background: #1a1a1a; padding: 2rem; border-radius: 12px;">
-    <img 
-      src="https://imgs.search.brave.com/Ij4jpMYdw8s8tRITMphmOyteiDqZgQFZ1f73G-n5lnA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMx/MjUzMTgyNi9waG90/by95b3VuZy1jYXVj/YXNpYW4tYnJ1bmV0/dGUtZ2lybC13aXRo/LWhlYWRwaG9uZXMt/b3V0ZG9vcnMtb24t/c3Vubnktc3VtbWVy/LWRheS5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9cU1valM2/dm9lUUFzbmRaSHEz/bVcwX0hoQzhWeGxi/ZERPUVNieVBVVWpi/TT0" 
-      alt="Music Recommender"
-      style="width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;"
-    >
-    <h2 style="color: #fff; font-size: 1.5rem;">🎵 Music Recommendation Website</h2>
-    <p style="color: #ccc; font-size: 1rem;">
-      A web app that uses Spotify API and machine learning to suggest songs based on user mood and genre preference. Built with Django and PostgreSQL.
+<!-- Detailed Project Showcase (From Resume) -->
+<div style="display: flex; flex-direction: column; gap: 3rem; margin-bottom: 5rem;">
+
+  <!-- 1. Knowa -->
+  <div class="glass-card" style="padding: 2.5rem; border-color: rgba(139, 92, 246, 0.4);">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+      <div>
+        <span class="tag-badge" style="background: rgba(139, 92, 246, 0.2); color: #c4b5fd; margin-bottom: 0.5rem;">
+          Flagship • 2026 – Present
+        </span>
+        <h2 style="font-size: 1.85rem; color: #fff; margin: 0.25rem 0;">
+          Knowa – Explainable Business Decision Intelligence Platform
+        </h2>
+      </div>
+      <a href="https://github.com/ShubhamPenkar/Knowa" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 0;">
+        <i class="fab fa-github"></i> View Repository
+      </a>
+    </div>
+
+    <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+      Architected a multi-tenant decision platform that transforms raw machine learning predictions into scored, trackable business interventions across 5 distinct domains.
     </p>
+
+    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.5rem;">
+      <h4 style="font-size: 1rem; color: var(--primary-light); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Key Architecture Highlights:</h4>
+      <ul style="color: var(--text-muted); line-height: 1.8; padding-left: 1.25rem;">
+        <li><strong>Explainability Engine:</strong> Implemented SHAP and LIME explanations accompanied by a proprietary trust scoring mechanism.</li>
+        <li><strong>Causal Blindspot Detection:</strong> Engineered a detection engine to uncover unobserved confounders and Simpson's-paradox trend reversals.</li>
+        <li><strong>Risk Mitigation:</strong> Built an automated "don't-act" queue to divert low-confidence predictions from taking automated actions.</li>
+        <li><strong>Prescriptive Strategy (In Progress):</strong> Implementing a 5-agent layer generating actionable strategic recommendations directly traceable to model evidence.</li>
+      </ul>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+      <span class="tag-badge">FastAPI</span>
+      <span class="tag-badge">SQLAlchemy 2.0</span>
+      <span class="tag-badge">Celery</span>
+      <span class="tag-badge">Redis</span>
+      <span class="tag-badge">React</span>
+      <span class="tag-badge">SHAP</span>
+      <span class="tag-badge">LIME</span>
+      <span class="tag-badge">Explainable AI</span>
+    </div>
   </div>
 
-  <!-- Environmental Impact Analyzer -->
-  <div style="background: #1a1a1a; padding: 2rem; border-radius: 12px;">
-    <img 
-      src="https://www.satseva.org.in/wp-content/uploads/2025/02/Environment-Care.jpg.webp" 
-      alt="Environmental Project" 
-      style="width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;"
-    >
-    <h2 style="color: #fff; font-size: 1.5rem;">🌍 Environmental Impact Analyzer</h2>
-    <p style="color: #ccc; font-size: 1rem;">
-      A sustainability tool that analyzes user habits to estimate carbon footprint and provide actionable suggestions. Developed using Python, Django, and Chart.js.
+  <!-- 2. MealMind -->
+  <div class="glass-card" style="padding: 2.5rem; border-color: rgba(99, 102, 241, 0.35);">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+      <div>
+        <span class="tag-badge" style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; margin-bottom: 0.5rem;">
+          Optimization & Forecasting • 2026
+        </span>
+        <h2 style="font-size: 1.85rem; color: #fff; margin: 0.25rem 0;">
+          MealMind – Demand Forecasting & Surplus Redistribution
+        </h2>
+      </div>
+      <a href="https://github.com/ShubhamPenkar/MealMind" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 0;">
+        <i class="fab fa-github"></i> View Repository
+      </a>
+    </div>
+
+    <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+      Engineered the machine learning and algorithmic decision backend for an institutional kitchen optimization system, drastically curtailing food waste.
     </p>
+
+    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.5rem;">
+      <h4 style="font-size: 1rem; color: #818cf8; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Key Architecture Highlights:</h4>
+      <ul style="color: var(--text-muted); line-height: 1.8; padding-left: 1.25rem;">
+        <li><strong>Gradient-Boosted Forecasting:</strong> Built demand projections with SHAP explainability achieving an impressive <strong>3.5% MAPE</strong> on synthetic data, directly feeding a production-sizing optimizer.</li>
+        <li><strong>MILP Surplus Routing:</strong> Formulated surplus food redistribution as a Mixed-Integer Linear Program (MILP) using SciPy.</li>
+        <li><strong>Constrained Vehicle Routing:</strong> Designed a VRP solver incorporating cold-chain compliance, tight delivery windows, and perishable food expiry limits.</li>
+        <li><strong>Risk Simulation:</strong> Integrated a Monte Carlo scenario engine to model demand fluctuations and delivery uncertainties.</li>
+      </ul>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+      <span class="tag-badge">Python</span>
+      <span class="tag-badge">LightGBM</span>
+      <span class="tag-badge">SHAP</span>
+      <span class="tag-badge">SciPy MILP</span>
+      <span class="tag-badge">Vehicle Routing (VRP)</span>
+      <span class="tag-badge">Monte Carlo</span>
+      <span class="tag-badge">Optimization</span>
+    </div>
   </div>
 
-  <!-- Portfolio Website -->
-  <div style="background: #1a1a1a; padding: 2rem; border-radius: 12px;">
-    <img 
-      src="https://i.ibb.co/4gC768qh/Minimalist-Design-Featuring-Bold-Portfolio-Text-On-Dark-Background.png" 
-      alt="Portfolio Website" 
-      style="width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;"
-    >
-    <h2 style="color: #fff; font-size: 1.5rem;">💼 My Portfolio</h2>
-    <p style="color: #ccc; font-size: 1rem;">
-      The very site you're browsing — handcrafted using Django, HTML, and pure CSS. Clean design, dynamic pages, and fully mobile responsive.
+  <!-- 3. MediKiosk -->
+  <div class="glass-card" style="padding: 2.5rem; border-color: rgba(56, 189, 248, 0.35);">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+      <div>
+        <span class="tag-badge" style="background: rgba(56, 189, 248, 0.2); color: #7dd3fc; margin-bottom: 0.5rem;">
+          Conversational AI & Speech • 2026
+        </span>
+        <h2 style="font-size: 1.85rem; color: #fff; margin: 0.25rem 0;">
+          MediKiosk – Conversational AI Pipeline for Clinical Intake
+        </h2>
+      </div>
+      <a href="https://github.com/ShubhamPenkar/MediKiosk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 0;">
+        <i class="fab fa-github"></i> View Repository
+      </a>
+    </div>
+
+    <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+      Designed the speech-to-text and clinical entity extraction pipeline for an automated hospital patient intake system.
     </p>
+
+    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.5rem;">
+      <h4 style="font-size: 1rem; color: #38bdf8; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Key Architecture Highlights:</h4>
+      <ul style="color: var(--text-muted); line-height: 1.8; padding-left: 1.25rem;">
+        <li><strong>Speech-to-Text:</strong> Integrated low-latency faster-whisper transcription pipeline feeding medical speech directly into LLM extractors.</li>
+        <li><strong>Structured Schema Validation:</strong> Leveraged Gemini API extraction paired with strict Pydantic schemas capturing clinical parameters, confidence scores, and symptom negations.</li>
+        <li><strong>Clause-Aware Negation:</strong> Developed an algorithmic negation scanner to reliably differentiate positive symptoms from negated reports ("patient denies fever").</li>
+        <li><strong>LLM-Free Clinical Summary:</strong> Built a lightweight deterministic summarization engine eliminating unnecessary API overhead.</li>
+      </ul>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+      <span class="tag-badge">Python</span>
+      <span class="tag-badge">faster-whisper</span>
+      <span class="tag-badge">Gemini API</span>
+      <span class="tag-badge">FastAPI</span>
+      <span class="tag-badge">Pydantic</span>
+      <span class="tag-badge">Clinical NLP</span>
+      <span class="tag-badge">Speech AI</span>
+    </div>
   </div>
 
-  <!-- Email Spam Classifier -->
-  <div style="background: #1a1a1a; padding: 2rem; border-radius: 12px;">
-    <img 
-      src="https://imgs.search.brave.com/XIdcyrBvQbUPw3oQiy2SqQwXRd5EGpVQhYmn7yTg4Ng/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS12ZWN0/b3Ivc3VzcGljaW91/cy1tYWxpY2lvdXMt/c3BhbS1lbWFpbC1j/b25jZXB0LXdpdGgt/YWxlcnQtbm90aWZp/Y2F0aW9uXzE4NTAz/OC04NTcuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MA" 
-      alt="Spam Classifier" 
-      style="width: 100%; height: 280px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;"
-    >
-    <h2 style="color: #fff; font-size: 1.5rem;">📧 Email Spam Classifier</h2>
-    <p style="color: #ccc; font-size: 1rem;">
-      A machine learning web app that classifies emails as spam or not spam using natural language processing and a Naive Bayes model. Built with Python, Scikit-learn, and Django.
+  <!-- 4. Research Publication -->
+  <div class="glass-card" style="padding: 2.5rem; border-color: rgba(244, 63, 94, 0.35);">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+      <div>
+        <span class="tag-badge" style="background: rgba(244, 63, 94, 0.2); color: #fda4af; margin-bottom: 0.5rem;">
+          Published Paper • IRJMETS 2025
+        </span>
+        <h2 style="font-size: 1.85rem; color: #fff; margin: 0.25rem 0;">
+          Multilingual Social Media Toxicity Detection System
+        </h2>
+      </div>
+      <a href="https://github.com/kiahvaidya/multilingual-social-media-toxicity-detection" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: 0;">
+        <i class="fab fa-github"></i> View Repository
+      </a>
+    </div>
+
+    <p style="color: #e2e8f0; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
+      Authored and published research paper detailing machine learning architectures for detecting multilingual toxic content and hate speech across social media platforms.
     </p>
+
+    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.5rem;">
+      <h4 style="font-size: 1rem; color: #fb7185; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Research Contribution:</h4>
+      <ul style="color: var(--text-muted); line-height: 1.8; padding-left: 1.25rem;">
+        <li>Conducted comparative evaluation of text preprocessing techniques and tokenizers across multilingual datasets.</li>
+        <li>Trained and evaluated classical ML classifiers alongside ensemble methods to mitigate cross-lingual abusive text spread.</li>
+        <li>Published findings in the <em>International Research Journal of Modernization in Engineering Technology and Science (IRJMETS, 2025)</em>.</li>
+      </ul>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+      <span class="tag-badge">Machine Learning</span>
+      <span class="tag-badge">NLP</span>
+      <span class="tag-badge">Text Classification</span>
+      <span class="tag-badge">Python</span>
+      <span class="tag-badge">Scikit-learn</span>
+      <span class="tag-badge">Published Paper</span>
+    </div>
   </div>
 
 </div>
+
+<!-- GitHub CTA -->
+<section style="margin-top: 3rem; text-align: center;">
+  <div class="glass-card" style="padding: 3rem 2rem; background: linear-gradient(135deg, rgba(22, 24, 38, 0.8) 0%, rgba(99, 102, 241, 0.1) 100%); border-color: rgba(99, 102, 241, 0.25);">
+    <div style="font-size: 2.5rem; color: #fff; margin-bottom: 1rem;">
+      <i class="fab fa-github"></i>
+    </div>
+    <h3 style="font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">Explore Full Source Code on GitHub</h3>
+    <p style="color: var(--text-muted); max-width: 550px; margin: 0 auto 2rem; font-size: 1rem;">
+      Dive into repositories, simulation scripts, and architecture docs at <strong>github.com/ShubhamPenkar</strong>.
+    </p>
+    <a href="https://github.com/ShubhamPenkar" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+      <i class="fab fa-github"></i> Visit github.com/ShubhamPenkar
+    </a>
+  </div>
+</section>
 {% endblock %}

@@ -1,63 +1,218 @@
 {% extends 'base.html' %}
-{% block title %}Skills | Shubham Penkar{% endblock %}
-{% block content %}
-<h1 style="text-align: center; font-size: 2.5rem; color: #6f42c1;">🛠 My Skill Arsenal</h1>
-<p style="text-align: center; color: #d1d5db; max-width: 700px; margin: 0 auto 3rem;">
-  From backend wizardry to frontend flair, here’s what I bring to the code table.
-</p>
+{% block title %}Skills | Shubham Penkar — ML/AI & Data Engineering{% endblock %}
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-  <div>
-    <h3 style="margin-bottom: 0.5rem;">Python</h3>
-    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
-      <div style="height: 100%; width: 90%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+{% block content %}
+<div style="text-align: center; margin-bottom: 3.5rem;">
+  <span class="section-tag"><i class="fas fa-layer-group"></i> Technical Competencies</span>
+  <h1 style="font-size: 2.8rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem;">
+    Technical <span class="gradient-text">Skills</span>
+  </h1>
+  <p style="color: var(--text-muted); max-width: 680px; margin: 0 auto; font-size: 1.1rem;">
+    Comprehensive toolkit spanning Machine Learning algorithms, Explainable AI, mathematical optimization, and high-performance backend pipelines.
+  </p>
+</div>
+
+<!-- Categorized Skill Cards (From Resume) -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
+  <!-- ML / AI -->
+  <div class="glass-card skill-category-card">
+    <h3 class="skill-category-title">
+      <i class="fas fa-brain" style="color: #a78bfa;"></i>
+      <span>Machine Learning & AI</span>
+    </h3>
+    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Scikit-learn, XGBoost & LightGBM</span>
+          <span style="color: var(--text-accent);">Advanced</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Predictive modeling, regression, gradient boosting, classification</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Explainable AI: SHAP & LIME</span>
+          <span style="color: var(--text-accent);">Specialist</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Trust scoring, feature attributions, causal blindspot analysis</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Vertex AI & Gemini API</span>
+          <span style="color: var(--text-accent);">Advanced</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Configurable AI agents, schema extraction, LLM pipelines</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Speech AI: faster-whisper</span>
+          <span style="color: var(--text-accent);">Proficient</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Real-time speech-to-text, audio transcription pipelines</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Unsupervised: K-Means & PCA</span>
+          <span style="color: var(--text-accent);">Advanced</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Dimensionality reduction, cluster segmentation (Piramal Pharma)</p>
+      </div>
     </div>
   </div>
-  <div>
-    <h3 style="margin-bottom: 0.5rem;">Django</h3>
-    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
-      <div style="height: 100%; width: 85%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+
+  <!-- Optimization & Analytics -->
+  <div class="glass-card skill-category-card">
+    <h3 class="skill-category-title">
+      <i class="fas fa-chart-pie" style="color: #6366f1;"></i>
+      <span>Optimization & Analytics</span>
+    </h3>
+    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>MILP (Mixed-Integer Linear Programming)</span>
+          <span style="color: var(--text-accent);">Advanced</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">SciPy optimization, production sizing, linear solvers</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Constrained Vehicle Routing (VRP)</span>
+          <span style="color: var(--text-accent);">Advanced</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Cold chain logistics, strict time windows, expiry limit constraints</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Monte Carlo Simulation</span>
+          <span style="color: var(--text-accent);">Proficient</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Stochastic risk modeling and scenario engines</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Time-Series Demand Forecasting</span>
+          <span style="color: var(--text-accent);">Specialist</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">High-precision demand projection (achieved 3.5% MAPE on MealMind)</p>
+      </div>
     </div>
   </div>
-  <div>
-    <h3 style="margin-bottom: 0.5rem;">HTML5</h3>
-    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
-      <div style="height: 100%; width: 95%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+
+  <!-- Backend & Data Engineering -->
+  <div class="glass-card skill-category-card">
+    <h3 class="skill-category-title">
+      <i class="fas fa-database" style="color: #8b5cf6;"></i>
+      <span>Backend & Data Engineering</span>
+    </h3>
+    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>FastAPI & Pydantic</span>
+          <span style="color: var(--text-accent);">Advanced</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Asynchronous endpoints, strict data contracts, high throughput</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Django & Ruby on Rails</span>
+          <span style="color: var(--text-accent);">Proficient</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Full-stack frameworks, database migrations, Titan AI on Rails</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>PostgreSQL & SQLAlchemy 2.0</span>
+          <span style="color: var(--text-accent);">Advanced</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Relational schema modeling, multi-tenancy, complex queries</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Celery & Redis</span>
+          <span style="color: var(--text-accent);">Proficient</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Distributed task queues, caching, WebSockets integration</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Pandas & Data Wrangling</span>
+          <span style="color: var(--text-accent);">Expert</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Cleaning and transforming messy enterprise datasets</p>
+      </div>
     </div>
   </div>
-  <div>
-    <h3 style="margin-bottom: 0.5rem;">CSS3</h3>
-    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
-      <div style="height: 100%; width: 88%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
-    </div>
-  </div>
-  <div>
-    <h3 style="margin-bottom: 0.5rem;">JavaScript</h3>
-    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
-      <div style="height: 100%; width: 75%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
-    </div>
-  </div>
-  <div>
-    <h3 style="margin-bottom: 0.5rem;">PostgreSQL</h3>
-    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
-      <div style="height: 100%; width: 70%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
-    </div>
-  </div>
-  <div>
-    <h3 style="margin-bottom: 0.5rem;">Git & GitHub</h3>
-    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
-      <div style="height: 100%; width: 80%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
-    </div>
-  </div>
-  <div>
-    <h3 style="margin-bottom: 0.5rem;">Figma / UI Design</h3>
-    <div style="width: 100%; background: #1e1e1e; height: 14px; border-radius: 8px;">
-      <div style="height: 100%; width: 60%; background: linear-gradient(90deg, #6f42c1, #9d4edd); border-radius: 8px;"></div>
+
+  <!-- Languages, Frontend & Tools -->
+  <div class="glass-card skill-category-card">
+    <h3 class="skill-category-title">
+      <i class="fas fa-tools" style="color: #38bdf8;"></i>
+      <span>Languages & Tools</span>
+    </h3>
+    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Languages: Python, SQL, JavaScript</span>
+          <span style="color: var(--text-accent);">Primary</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Python for ML/backends, advanced SQL, JS for dynamic frontends</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>React</span>
+          <span style="color: var(--text-accent);">Proficient</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Interactive dashboards, client state management, UI integration</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>Unreal Engine 5</span>
+          <span style="color: var(--text-accent);">Applied</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Text-to-3D simulation for live sports replays (JioStar)</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem;">
+          <span>DevOps: Git & Docker (basic)</span>
+          <span style="color: var(--text-accent);">Standard</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Version control, collaborative workflows, containerization</p>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- Dynamic Skills List (from Database) -->
+<section style="margin-bottom: 5rem;">
+  <span class="section-tag"><i class="fas fa-sliders-h"></i> Proficiency Levels</span>
+  <h2 style="font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 2rem;">Skill Competency Meters</h2>
+
+  <div class="skills-container">
+    {% for skill in skills %}
+    <div class="glass-card skill-item" style="padding: 1.5rem;">
+      <div class="skill-meta">
+        <div class="skill-name">
+          {% if skill.icon_class %}
+            <i class="{{ skill.icon_class }}"></i>
+          {% else %}
+            <i class="fas fa-code"></i>
+          {% endif %}
+          <span>{{ skill.name }}</span>
+        </div>
+        <div class="skill-percent">{{ skill.proficiency }}%</div>
+      </div>
+
+      <div class="skill-bar-track">
+        <div class="skill-bar-fill" style="width: {{ skill.proficiency }}%;"></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Bottom CTA -->
 <div style="text-align: center; margin-top: 3rem;">
-  <a href="{% url 'projects' %}" class="btn">Peek My Projects</a>
+  <a href="{% url 'projects' %}" class="btn btn-primary">
+    <i class="fas fa-microchip"></i> Explore My Projects & Code
+  </a>
 </div>
 {% endblock %}

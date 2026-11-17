@@ -1,163 +1,90 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{% block title %}Shubham Penkar{% endblock %}</title>
+  <title>{% block title %}Shubham Penkar | Data Science, ML/AI & Data Engineering{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Shubham Penkar — Fourth-year Electronics and Computer Science student with internships at JioStar & Piramal Pharma, a published NLP paper, and projects in forecasting, optimization, and speech AI.">
+  <meta property="og:title" content="Shubham Penkar | Data Science, ML/AI & Data Engineering">
+  <meta property="og:description" content="Explore my projects in Explainable AI (Knowa), MILP Optimization (MealMind), Speech AI (MediKiosk), and published NLP research.">
+  <meta property="og:type" content="website">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    :root {
-      --primary: #6f42c1;
-      --dark-bg: #0d0d0d;
-      --nav-bg: #1a1a1a;
-      --text: #f0f0f0;
-      --accent: #cccccc;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Outfit', sans-serif;
-      background: var(--dark-bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
-
-    nav {
-      background: var(--nav-bg);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1.2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      position: relative;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    nav a:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 3rem 1.5rem;
-      animation: fadeIn 0.7s ease-in-out;
-    }
-
-    h1, h2, h3 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li::before {
-      content: '\2022';
-      color: var(--primary);
-      font-weight: bold;
-      display: inline-block;
-      width: 1em;
-    }
-
-    a.btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text);
-      border: 1px solid var(--primary);
-      border-radius: 12px;
-      backdrop-filter: blur(4px);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease-in-out;
-    }
-
-    a.btn:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 0.5rem 0 1.2rem;
-      border: none;
-      border-radius: 6px;
-      background: #2a2a2a;
-      color: white;
-    }
-
-    form button {
-      background: var(--primary);
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    form button:hover {
-      background: #5e35b1;
-    }
-
-    footer {
-      background: var(--nav-bg);
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: var(--accent);
-      margin-top: 5rem;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-  <nav>
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'about' %}">About</a>
-    <a href="{% url 'skills' %}">Skills</a>
-    <a href="{% url 'projects' %}">Projects</a>
-    <a href="{% url 'contact' %}">Contact</a>
-  </nav>
+  <!-- Header / Navigation -->
+  <header class="header-wrapper">
+    <nav class="navbar">
+      <a href="{% url 'home' %}" class="nav-brand">
+        <span class="brand-badge">SP</span>
+        <span>Shubham Penkar</span>
+      </a>
 
-  <div class="container">
+      <div class="nav-links">
+        <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
+        <a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">Experience & Bio</a>
+        <a href="{% url 'skills' %}" class="{% if request.resolver_match.url_name == 'skills' %}active{% endif %}">Skills</a>
+        <a href="{% url 'projects' %}" class="{% if request.resolver_match.url_name == 'projects' %}active{% endif %}">Projects</a>
+        <a href="{% url 'contact' %}" class="btn nav-cta">Get In Touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    {% if messages %}
+      <div class="messages-container">
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {% if message.tags == 'success' %}
+              <i class="fas fa-check-circle" style="color: #22c55e;"></i>
+            {% elif message.tags == 'error' %}
+              <i class="fas fa-exclamation-circle" style="color: #ef4444;"></i>
+            {% else %}
+              <i class="fas fa-info-circle" style="color: #3b82f6;"></i>
+            {% endif %}
+            <span>{{ message }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     {% block content %}{% endblock %}
-  </div>
+  </main>
 
-  <footer>
-    &copy; 2025 — Shubham Penkar | Built with passion and Django.
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div>
+        <div class="footer-brand">Shubham Penkar</div>
+        <p class="footer-text">Data Science • Machine Learning / AI • Data Engineering • Backend</p>
+      </div>
+
+      <div class="social-strip" style="margin-top: 0;">
+        <a href="https://github.com/ShubhamPenkar" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:shubhamworks1718@gmail.com" class="social-icon-btn" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+919136507755" class="social-icon-btn" title="Phone">
+          <i class="fas fa-phone"></i>
+        </a>
+      </div>
+
+      <div class="footer-text">
+        Mumbai, India • &copy; {% now "Y" %} Shubham Penkar
+      </div>
+    </div>
   </footer>
 </body>
 </html>
