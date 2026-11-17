@@ -42,6 +42,7 @@ class ContactFormTests(TestCase):
         self.client = Client()
 
     def test_contact_form_valid_submission(self):
+        from django.core import mail
         payload = {
             'name': 'Alice Smith',
             'email': 'alice@example.com',
@@ -54,6 +55,9 @@ class ContactFormTests(TestCase):
         contact = Contact.objects.get(email='alice@example.com')
         self.assertEqual(contact.name, 'Alice Smith')
         self.assertContains(response, 'sent successfully')
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertIn('Alice Smith', mail.outbox[0].subject)
+        self.assertIn('shubhamworks1718@gmail.com', mail.outbox[0].to)
 
     def test_contact_form_invalid_email(self):
         payload = {
