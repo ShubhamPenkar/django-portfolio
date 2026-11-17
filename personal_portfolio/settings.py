@@ -43,11 +43,7 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('true', '1', 'yes')
 
-ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.environ.get('DJANGO_ALLOWED_HOSTS', '127.0.0.1,localhost,.vercel.app,.now.sh').split(',')
-    if host.strip()
-]
+ALLOWED_HOSTS = ['*']
 
 # Trusted origins for CSRF (critical for Vercel & cloud hosting)
 CSRF_TRUSTED_ORIGINS = [
@@ -172,11 +168,7 @@ STORAGES = {
         'BACKEND': 'django.core.files.storage.FileSystemStorage',
     },
     'staticfiles': {
-        'BACKEND': (
-            'whitenoise.storage.CompressedManifestStaticFilesStorage'
-            if not DEBUG
-            else 'whitenoise.storage.CompressedStaticFilesStorage'
-        ),
+        'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
     },
 }
 

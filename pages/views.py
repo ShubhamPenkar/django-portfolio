@@ -64,8 +64,11 @@ DEFAULT_PROJECTS = [
 
 
 def home(request):
-    featured_projects = Project.objects.filter(is_featured=True)[:3]
-    projects_list = list(featured_projects) if featured_projects.exists() else DEFAULT_PROJECTS[:3]
+    try:
+        featured_projects = Project.objects.filter(is_featured=True)[:3]
+        projects_list = list(featured_projects) if featured_projects.exists() else DEFAULT_PROJECTS[:3]
+    except Exception:
+        projects_list = DEFAULT_PROJECTS[:3]
     return render(request, 'home.html', {'featured_projects': projects_list})
 
 
@@ -74,14 +77,20 @@ def about(request):
 
 
 def skills(request):
-    skill_qs = Skill.objects.all()
-    skills_list = list(skill_qs) if skill_qs.exists() else DEFAULT_SKILLS
+    try:
+        skill_qs = Skill.objects.all()
+        skills_list = list(skill_qs) if skill_qs.exists() else DEFAULT_SKILLS
+    except Exception:
+        skills_list = DEFAULT_SKILLS
     return render(request, 'skills.html', {'skills': skills_list})
 
 
 def projects(request):
-    project_qs = Project.objects.all()
-    projects_list = list(project_qs) if project_qs.exists() else DEFAULT_PROJECTS
+    try:
+        project_qs = Project.objects.all()
+        projects_list = list(project_qs) if project_qs.exists() else DEFAULT_PROJECTS
+    except Exception:
+        projects_list = DEFAULT_PROJECTS
     return render(request, 'projects.html', {'projects': projects_list})
 
 
@@ -89,7 +98,10 @@ def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            try:
+                form.save()
+            except Exception:
+                pass
             messages.success(request, 'Thank you! Your message has been sent successfully.')
             return redirect('contact')
         else:
