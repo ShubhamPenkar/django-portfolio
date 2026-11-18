@@ -1,3 +1,4 @@
+import os
 import sys
 import json
 import logging
@@ -145,7 +146,35 @@ def dispatch_contact_notification(name, email, number, content):
         except Exception as e:
             logger.warning("SMTP email sending failed: %s", e)
 
-    # 2. HTTPS Webhook delivery via FormSubmit (for production serverless without SMTP credentials)
+    # 2. Web3Forms API dispatch (recommended for serverless & works with zero Google password)
+    web3_key = getattr(settings, 'WEB3FORMS_ACCESS_KEY', None) or os.environ.get('WEB3FORMS_ACCESS_KEY', '')
+    if web3_key and not is_testing:
+        try:
+            url = "https://api.web3forms.com/submit"
+            payload = json.dumps({
+                "access_key": web3_key,
+                "name": name,
+                "email": email,
+                "phone": number or "Not provided",
+                "message": content,
+                "subject": subject,
+                "from_name": "Portfolio Contact Form",
+            }).encode("utf-8")
+            req = urllib.request.Request(
+                url,
+                data=payload,
+                headers={
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+                },
+            )
+            with urllib.request.urlopen(req, timeout=8) as response:
+                return response.status == 200
+        except Exception as e:
+            logger.warning("Web3Forms forwarding failed: %s", e)
+
+    # 3. HTTPS Webhook delivery via FormSubmit (fallback)
     if not is_testing:
         try:
             url = f"https://formsubmit.co/ajax/{recipient}"
@@ -201,4 +230,5 @@ def contact(request):
     else:
         form = ContactForm()
 
-    return render(request, 'contact.html', {'form': form})
+    web3_key = getattr(settings, 'WEB3FORMS_ACCESS_KEY', None) or os.environ.get('WEB3FORMS_ACCESS_KEY', '')
+    return render(request, 'contact.html', {'form': form, 'web3_key': web3_key})

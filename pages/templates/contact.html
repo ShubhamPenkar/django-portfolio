@@ -159,26 +159,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (name.length >= 2 && email.includes('@') && message.length >= 5) {
       // Direct browser dispatch to guarantee delivery through client-side HTTPS
-      try {
-        fetch('https://formsubmit.co/ajax/shubhamworks1718@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            name: name,
-            email: email,
-            phone: phone || 'Not provided',
-            message: message,
-            _subject: 'Portfolio Contact from ' + name,
-            _captcha: 'false',
-            _replyto: email
-          })
-        }).catch(function(err) {
-          console.warn('Client forward error:', err);
-        });
-      } catch (err) {}
+      const web3Key = '{{ web3_key|default:"" }}';
+      if (web3Key) {
+        try {
+          fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              access_key: web3Key,
+              name: name,
+              email: email,
+              phone: phone || 'Not provided',
+              message: message,
+              subject: 'Portfolio Contact from ' + name,
+              from_name: 'Portfolio Contact Form'
+            })
+          }).catch(function(err) {
+            console.warn('Web3Forms client error:', err);
+          });
+        } catch (err) {}
+      } else {
+        try {
+          fetch('https://formsubmit.co/ajax/shubhamworks1718@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              phone: phone || 'Not provided',
+              message: message,
+              _subject: 'Portfolio Contact from ' + name,
+              _captcha: 'false',
+              _replyto: email
+            })
+          }).catch(function(err) {
+            console.warn('Client forward error:', err);
+          });
+        } catch (err) {}
+      }
     }
   });
 });
