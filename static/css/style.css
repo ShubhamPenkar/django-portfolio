@@ -143,6 +143,29 @@ nav.navbar {
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
+.mobile-nav-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 1.2rem;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.mobile-nav-toggle:hover,
+.mobile-nav-toggle:focus-visible {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: var(--primary-light);
+  color: #fff;
+  outline: none;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -714,7 +737,7 @@ main.container {
   border-radius: var(--radius-sm);
   color: #fff;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 16px; /* Prevents auto-zoom on iOS Safari */
   transition: var(--transition);
   box-sizing: border-box;
 }
@@ -795,57 +818,273 @@ footer.site-footer {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints
+   Responsive Breakpoints & Mobile Optimization
    ========================================================================== */
+
+/* Tablets & Small Laptops (<= 868px) */
 @media (max-width: 868px) {
+  nav.navbar {
+    position: relative;
+    padding: 0.9rem 1.25rem;
+  }
+
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(12, 14, 22, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1.25rem 1.5rem;
+    gap: 0.75rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    animation: slideNavDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .nav-links a.active {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .nav-links a.nav-cta {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem !important;
+  }
+
   .hero-title {
-    font-size: 2.75rem;
+    font-size: 2.6rem;
   }
 
   .contact-layout {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
+/* Mobile Devices (<= 680px) */
 @media (max-width: 680px) {
-  nav.navbar {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+  body {
+    font-size: 15px;
   }
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+  main.container {
+    padding: 1.5rem 1rem;
   }
 
-  .nav-links a {
-    font-size: 0.875rem;
-    padding: 0.4rem 0.65rem;
+  .glass-card {
+    padding: 1.35rem 1rem !important;
+    border-radius: 14px !important;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.25 !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
   }
 
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.1rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1rem !important;
   }
 
   .hero-subtitle {
-    font-size: 1.05rem;
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .status-indicator {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.75rem;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  /* Hero Headshot & Actions */
+  .landing-headshot {
+    width: 135px !important;
+    height: 135px !important;
   }
 
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .hero-actions .btn {
     width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.95rem;
   }
 
+  /* Stats Bar: 3 columns on mobile */
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-top: 2.5rem !important;
+  }
+
+  .stat-item {
+    padding: 0.85rem 0.35rem !important;
+    border-radius: 12px;
+  }
+
+  .stat-number {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Tech Chips */
+  .tech-chips {
+    gap: 0.45rem;
+    justify-content: center;
+  }
+
+  .tech-chip {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 8px;
+  }
+
+  /* Tag Badges */
+  .tag-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  /* Bio & About Mobile */
+  .about-avatar-img {
+    width: 190px !important;
+    height: 190px !important;
+  }
+
+  /* Project Cards on Mobile */
+  .project-body {
+    padding: 1.25rem 1rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .project-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 0.65rem 1rem;
+  }
+
+  /* Contact Page */
+  .contact-methods {
+    gap: 1rem;
+  }
+
+  .contact-method-item {
+    gap: 0.75rem;
+  }
+
+  .contact-icon-box {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    min-width: 40px;
+  }
+
+  .contact-value {
+    word-break: break-all;
+    font-size: 0.9rem;
+  }
+
+  /* Footer on Mobile */
   .footer-content {
     flex-direction: column;
     text-align: center;
+    gap: 1.25rem;
   }
+
+  .social-strip {
+    justify-content: center;
+  }
+
+  .social-icon-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra Small Phones (<= 400px, e.g. iPhone SE / Galaxy Z Flip) */
+@media (max-width: 400px) {
+  .hero-stats {
+    grid-template-columns: 1fr !important;
+    gap: 0.65rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.85rem !important;
+  }
+
+  .nav-brand {
+    font-size: 1.05rem;
+  }
+
+  .brand-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+}
+
+@keyframes slideNavDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {

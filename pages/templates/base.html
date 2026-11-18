@@ -29,7 +29,12 @@
         <span>Shubham Penkar</span>
       </a>
 
-      <div class="nav-links">
+      <!-- Mobile Menu Hamburger Button -->
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="nav-links" id="navLinks">
         <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a>
         <a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">Experience & Bio</a>
         <a href="{% url 'skills' %}" class="{% if request.resolver_match.url_name == 'skills' %}active{% endif %}">Skills</a>
@@ -86,5 +91,55 @@
       </div>
     </div>
   </footer>
+  <!-- Mobile Navigation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('mobileNavToggle');
+      const navLinks = document.getElementById('navLinks');
+      if (toggle && navLinks) {
+        toggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isOpen = navLinks.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          const icon = toggle.querySelector('i');
+          if (icon) {
+            if (isOpen) {
+              icon.classList.remove('fa-bars');
+              icon.classList.add('fa-times');
+            } else {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!navLinks.contains(e.target) && !toggle.contains(e.target) && navLinks.classList.contains('nav-open')) {
+            navLinks.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            const icon = toggle.querySelector('i');
+            if (icon) {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          }
+        });
+
+        // Close menu when any link is tapped
+        navLinks.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            navLinks.classList.remove('nav-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            const icon = toggle.querySelector('i');
+            if (icon) {
+              icon.classList.remove('fa-times');
+              icon.classList.add('fa-bars');
+            }
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
