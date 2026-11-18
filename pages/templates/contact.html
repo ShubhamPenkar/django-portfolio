@@ -89,7 +89,7 @@
       Send a Direct Message
     </h3>
 
-    <form method="post" novalidate>
+    <form id="contact-form" method="post" novalidate>
       {% csrf_token %}
 
       <div class="form-group">
@@ -138,4 +138,49 @@
     </form>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function() {
+    const nameInput = document.getElementById('{{ form.name.id_for_label }}');
+    const emailInput = document.getElementById('{{ form.email.id_for_label }}');
+    const numberInput = document.getElementById('{{ form.number.id_for_label }}');
+    const contentInput = document.getElementById('{{ form.content.id_for_label }}');
+
+    if (!nameInput || !emailInput || !contentInput) return;
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const phone = numberInput ? numberInput.value.trim() : '';
+    const message = contentInput.value.trim();
+
+    if (name.length >= 2 && email.includes('@') && message.length >= 5) {
+      // Direct browser dispatch to guarantee delivery through client-side HTTPS
+      try {
+        fetch('https://formsubmit.co/ajax/shubhamworks1718@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            phone: phone || 'Not provided',
+            message: message,
+            _subject: 'Portfolio Contact from ' + name,
+            _captcha: 'false',
+            _replyto: email
+          })
+        }).catch(function(err) {
+          console.warn('Client forward error:', err);
+        });
+      } catch (err) {}
+    }
+  });
+});
+</script>
 {% endblock %}

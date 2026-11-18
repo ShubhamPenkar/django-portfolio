@@ -156,17 +156,18 @@ def dispatch_contact_notification(name, email, number, content):
                 "message": content,
                 "_subject": subject,
                 "_replyto": email,
+                "_captcha": "false",
             }).encode("utf-8")
             req = urllib.request.Request(
                 url,
                 data=payload,
                 headers={
                     "Content-Type": "application/json",
-                    "User-Agent": "Django-Portfolio/1.0",
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
                     "Accept": "application/json",
                 },
             )
-            with urllib.request.urlopen(req, timeout=5) as response:
+            with urllib.request.urlopen(req, timeout=8) as response:
                 return response.status == 200
         except Exception as e:
             logger.warning("HTTPS email forwarding failed: %s", e)
